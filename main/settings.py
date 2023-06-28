@@ -64,7 +64,7 @@ WSGI_APPLICATION = "main.wsgi.application"
 
 
 if "DATABASE_URL" in os.environ:
-    print("database = PostgreSQL via Heroku")
+    print("database = PostgreSQL via ElephantSQL")
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }

@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = []
-host = os.environ.get("SITE_NAME")
+host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com")
 if host:
     ALLOWED_HOSTS.append(host)
 

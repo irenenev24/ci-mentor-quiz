@@ -1,15 +1,16 @@
 import os
 from pathlib import Path
 import dj_database_url
+
 if os.path.exists("env.py"):
     import env  # noqa
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "Un&O>c)AIIi/t*9yVN'gc5TG!/PsR#")
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = []
-host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com")
+host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com", '8000-irenenev24-cimentorquiz-r3500hjrp3j.ws-eu101.gitpod.io')
 if host:
     ALLOWED_HOSTS.append(host)
 
@@ -24,6 +25,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "django.contrib.staticfiles",
     "django_countries",
+    'whitenoise.runserver_nostatic',
     "accounts",
     "home",
     "questions",

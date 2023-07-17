@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "Un&O>c)AIIi/t*9yVN'gc5TG!/PsR#")
 DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = []
-host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com", '8000-irenenev24-cimentorquiz-r3500hjrp3j.ws-eu101.gitpod.io')
+host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com")
 if host:
     ALLOWED_HOSTS.append(host)
 

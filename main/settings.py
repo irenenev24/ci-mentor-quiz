@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import dj_database_url
+from .env import ALLOWED_HOSTS
 
 if os.path.exists("env.py"):
     import env  # noqa
@@ -9,10 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "Un&O>c)AIIi/t*9yVN'gc5TG!/PsR#")
 DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = []
-host = os.environ.get("ci-mentor-quiz-e357376a7f02.herokuapp.com")
-if host:
-    ALLOWED_HOSTS.append(host)
+ALLOWED_HOSTS = ALLOWED_HOSTS
 
 INSTALLED_APPS = [
     "django.contrib.admin",

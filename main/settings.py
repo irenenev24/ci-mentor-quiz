@@ -8,7 +8,7 @@ if os.path.exists("env.py"):
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "Un&O>c)AIIi/t*9yVN'gc5TG!/PsR#")
-DEBUG = os.environ.get("DEBUG", True)
+DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = ALLOWED_HOSTS
 

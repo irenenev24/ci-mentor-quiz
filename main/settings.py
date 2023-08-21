@@ -6,10 +6,10 @@ if os.path.exists("env.py"):
     import env  # noqa
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get("SECRET_KEY", "Un&O>c)AIIi/t*9yVN'gc5TG!/PsR#")
-DEBUG = os.environ.get("DEBUG", False)
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = ALLOWED_HOSTS = ['ci-mentor-quiz-e357376a7f02.herokuapp.com']
+ALLOWED_HOSTS = ['ci-mentor-quiz-e357376a7f02.herokuapp.com', '8000-irenenev24-cimentorquiz-68i2yph19h5.ws-eu104.gitpod.io']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -65,7 +65,7 @@ WSGI_APPLICATION = "main.wsgi.application"
 if "DATABASE_URL" in os.environ:
     print("database = PostgreSQL via ElephantSQL")
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 else:
     print("database = db.sqlite3")

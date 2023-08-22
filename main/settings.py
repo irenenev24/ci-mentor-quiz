@@ -7,7 +7,7 @@ if os.path.exists("env.py"):
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = os.environ.get("DEBUG", True)
+DEBUG = True
 
 ALLOWED_HOSTS = ['ci-mentor-quiz-e357376a7f02.herokuapp.com', '8000-irenenev24-cimentorquiz-68i2yph19h5.ws-eu104.gitpod.io']
 
@@ -20,9 +20,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "django_countries",
-    'whitenoise.runserver_nostatic',
     "accounts",
     "home",
     "questions",
@@ -125,6 +125,7 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_URL = "/static/"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
